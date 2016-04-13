@@ -1,0 +1,19 @@
+# Directories #
+/.settings/
+target/
+
+# OS Files #
+.DS_Store
+
+######################
+# Eclipse
+######################
+ 
+*.pydevproject
+.project
+.metadata
+.settings
+bin/**
+tmp/**
+.classpath
+.springBeans
