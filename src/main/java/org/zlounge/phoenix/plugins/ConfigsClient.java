@@ -1,16 +1,9 @@
 package org.zlounge.phoenix.plugins;
 
 import java.util.Base64;
-
-import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.client.WebTarget;
 
 public class ConfigsClient {
-    WebTarget webTarget;
-
-    Client client;
-
     /**
      * Get configs from spring cloud config server as JSON string
      * 
@@ -33,9 +26,7 @@ public class ConfigsClient {
 	String url = String.format("%s/%s/%s/", configServerUrl, clientName, profile);
 	String authHeader = String.format("Basic %s", encode64(name, password));
 
-	client = ClientBuilder.newClient();
-
-	String response = client.target(url).request().header("Authorization", authHeader)
+	String response = ClientBuilder.newClient().target(url).request().header("Authorization", authHeader)
 		.header("Accept", "application/json").get(String.class);
 
 	return response;

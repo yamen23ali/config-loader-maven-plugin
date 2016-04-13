@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.yaml.snakeyaml.Yaml;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * Goal which loads config from config server and merge them with local configs

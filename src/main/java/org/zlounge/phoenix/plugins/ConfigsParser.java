@@ -15,7 +15,6 @@ import java.util.Map;
 import org.yaml.snakeyaml.Yaml;
 
 public class ConfigsParser {
-    ObjectMapper mapper = new ObjectMapper();
 
     /**
      * Extract configs related to profiles out of the JSON returned from the
@@ -30,7 +29,8 @@ public class ConfigsParser {
      */
     public ArrayList<HashMap<String, String>> getConfigsFromJson(String json)
 	    throws JsonProcessingException, IOException {
-	Map<String, Object> map = mapper.readValue(json, new TypeReference<HashMap<String, Object>>() {
+	
+	Map<String, Object> map = new ObjectMapper().readValue(json, new TypeReference<HashMap<String, Object>>() {
 	});
 
 	ArrayList<HashMap<String, Object>> content = (ArrayList<HashMap<String, Object>>) map.get("propertySources");
