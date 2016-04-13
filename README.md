@@ -1,12 +1,7 @@
-# config-loader-maven-plugin
-
-This maven plugin will load configs from **( spring cloud config server )** and merge them with client **( application.yml )** file.
-So no client would be affected with config server changes unless its rebuilt again
-
 configs-loader
 =========
 
-Configs loader is a maven plugin that loads configs from **( spring cloud config server )** and merge them with application configs into one final config file **( application.yml )**.
+Configs loader is a maven plugin that loads configs from **( spring cloud config server )** and merge them with application configs during the maven build into one final config file **( application.yml )**.
 The main purpose of this plugin is :
 - Provide a full configuration file after the project is built .
 - Any spring cloud config server changes won't affect the spring application unless the application is built again .
